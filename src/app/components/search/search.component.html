@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+
+<div class="row justify-content-center m-b-5 m-t-10">
+    <div class="col-8 m-t-10">
+        <input #termino type="text" (keyup)="buscar(termino.value)" class="form-control" placeholder="Buscar artista...">
+    </div>
+</div>
+
+<app-loader *ngIf="loader"></app-loader>
+
+<app-error [messageError]="messageError" *ngIf="error"></app-error>
+
+<app-card *ngIf="!loader && !error" [items]="artists"></app-card>
